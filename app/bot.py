@@ -10,15 +10,6 @@ from dateutil.parser import *
 order_details = {"id": "abcsdsad76ub767b77v", "mobile": "918341140401",
                  "itemName": "Oneplus 9R", "amount": 45000, "status": "Inprogress"}
 
-@app.route("/reset")
-def reset():
-    if session.get('date'):
-        session.pop('date')
-        
-    if session.get('status_index'):
-        session.pop('status_index')
-
-    return jsonify({"message":"success"})
 
 @app.before_first_request
 def _run_on_start():
